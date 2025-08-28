@@ -1,0 +1,15 @@
+name: A simple demo workflow
+
+on: [push]
+
+jobs:
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: Setup Node
+          uses: actions/setup-node@v4
+        - name: Install dependencies
+          run: npm install
+        - name: demo-job
+          run: node --version
+          run: npm --version
